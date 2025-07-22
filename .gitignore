@@ -1,0 +1,13 @@
+# Frontend
+rate-limiter-frontend/node_modules
+rate-limiter-frontend/.env
+rate-limiter-frontend/build
+
+# Backend
+api-gateway/node_modules
+api-gateway/.env
+api-gateway/serviceAccountKey.json
+
+# General
+.DS_Store
+*.log

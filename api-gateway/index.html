@@ -1,0 +1,36 @@
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyAsh3MIA_rmATWh4rHViWxLqsird9vQypY",
+  authDomain: "api-gateway-logs-fadff.firebaseapp.com",
+  databaseURL: "https://api-gateway-logs-fadff-default-rtdb.firebaseio.com",
+  projectId: "api-gateway-logs-fadff",
+  storageBucket: "api-gateway-logs-fadff.firebasestorage.app",
+  messagingSenderId: "8253240234",
+  appId: "1:8253240234:web:54bf49400563ace1d571d3",
+  measurementId: "G-GLW9HG0BJM"
+};
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+  
+    // Sign in and get JWT
+    signInWithEmailAndPassword(auth, "sweetu@gmail.com", "sweetu123")
+      .then((userCredential) => {
+        return userCredential.user.getIdToken();
+      })
+      .then((token) => {
+        console.log("✅ JWT Token:", token);
+        // You can use this token in your API requests!
+      })
+      .catch((error) => {
+        console.error("❌ Error:", error.message);
+      });
+  </script>
