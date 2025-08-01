@@ -17,7 +17,7 @@ const Dashboard = ({ jwtToken, showGuestInfo = false }) => {
     try {
       const result = await axios({
         method,
-        url: `http://localhost:9000${endpoint}`,
+        url: `${process.env.REACT_APP_API_URL}${endpoint}`,
         headers: jwtToken ? { Authorization: `Bearer ${jwtToken}` } : {}
       });
 

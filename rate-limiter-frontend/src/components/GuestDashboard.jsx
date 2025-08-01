@@ -10,7 +10,7 @@ const GuestDashboard = () => {
   const sendRequest = async () => {
     setIsLoading(true);
     try {
-      const result = await axios.get("http://localhost:9000/");
+      const result = await axios.get("${process.env.REACT_APP_API_URL}");
       setResponse(result.data);
       setRateLimit({
         limit: result.headers["x-ratelimit-limit"] || 5,
