@@ -17,7 +17,7 @@ const Dashboard = ({ jwtToken, showGuestInfo = false }) => {
     try {
       const result = await axios({
         method,
-        url: `${process.env.REACT_APP_API_URL}${endpoint}`,
+        url: `https://ratelimterapp-2.onrender.com/${endpoint}`,
         headers: jwtToken ? { Authorization: `Bearer ${jwtToken}` } : {}
       });
 

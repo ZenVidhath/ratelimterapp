@@ -10,7 +10,7 @@ const GuestDashboard = () => {
   const sendRequest = async () => {
     setIsLoading(true);
     try {
-      const result = await axios.get("${process.env.REACT_APP_API_URL}");
+      const result = await axios.get('https://ratelimterapp-2.onrender.com/');
       setResponse(result.data);
       setRateLimit({
         limit: result.headers["x-ratelimit-limit"] || 5,
