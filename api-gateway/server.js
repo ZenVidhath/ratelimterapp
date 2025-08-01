@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 9000;
 
 // ✅ CORS setup with exposed headers
 app.use(cors({
-  origin: 'http://localhost:3000', // Replace if your React runs on another port
+  origin: ['http://localhost:3000', 'https://ratelimterapp-8q3u.vercel.app'],/// Replace if your React runs on another port
   exposedHeaders: ['X-RateLimit-Limit', 'X-RateLimit-Remaining']
 }));
 
